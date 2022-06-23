@@ -2,7 +2,7 @@
 
  1. Node_exporter
  
-     Скачиваю нужный архив на свою машину [node_exporter](https://github.com/prometheus/node_exporter/releases) 
+     Скачиваем нужный архив на свою машину [node_exporter](https://github.com/prometheus/node_exporter/releases) 
      
      Распаковываю `tar xvfz node_exporter-1.3.1.linux-386.tar.gz`
      
