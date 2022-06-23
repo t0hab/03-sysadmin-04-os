@@ -4,11 +4,11 @@
  
      Скачиваем нужный архив на свою машину [node_exporter](https://github.com/prometheus/node_exporter/releases) 
      
-     Распаковываю `tar xvfz node_exporter-1.3.1.linux-386.tar.gz`
+     Распаковываем `tar xvfz node_exporter-1.3.1.linux-386.tar.gz`
      
-     Для удобства скопирую исполняемый файл `sudo cp ~/Загрузки/node_exporter-1.3.1.linux-386/node_exporter /usr/local/bin` 
+     Для удобства скопирую исполняемый файл в /usr/local/bin `sudo cp ~/Загрузки/node_exporter-1.3.1.linux-386/node_exporter /usr/local/bin` 
      
-     Создам юнит файл systemd для её запуска `sudo systemctl edit --full --force node_exportet.service`
+     Создам юнит файл systemd для его запуска `sudo systemctl edit --full --force node_exporter.service`
      ```
       [Unit]
       Description=Node Exporter
