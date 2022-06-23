@@ -29,4 +29,11 @@
      ![alt text](https://i.imgur.com/dOJLBFw.png)
      
      Подключаем для нашего сервиса автозапуск `sudo systemctl enable node_exporter`
+     
+     Дополнение: Необходимо порвеорить заранее не занят ли порт 9100, так как его использует node_exporter
+     
+     Скриншот работы Node Exporter с браузерной странички на нашем адрессе 
+     ![alt text](https://i.imgur.com/uBGlaEp.png)
+    
+     
     
