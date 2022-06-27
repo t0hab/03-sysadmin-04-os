@@ -50,6 +50,7 @@
       `node_cpu_seconds_total{cpu="0",mode="system"} 8.5` `node_cpu_seconds_total{cpu="0",mode="user"} 16.11` `node_cpu_seconds_total{cpu="0",mode="idle"} 277.67`
       
       * MEMORY `node_memory_MemAvailable_bytes 2.712117248e+09` `node_memory_MemFree_bytes 1.546317824e+09` `node_memory_MemTotal_bytes 4.1227264e+09`
+      * DISK `node_disk_io_time_seconds_total{device="sda"} 152.728` `node_disk_read_bytes_total{device="sda"} 1.280625664e+09` `node_disk_read_time_seconds_total{device="sda"} 480.72` `node_disk_write_time_seconds_total{device="sda"} 446.18600000000004` 
 
 
     
