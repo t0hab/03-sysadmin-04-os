@@ -46,7 +46,10 @@
       ## Ответ
       Перешел, для ознакомления с `metrics`, на http://localhost:9100/metrics
       
-      * CPU `node_cpu_seconds_total{cpu="1",mode="system"} 7.31` `node_cpu_seconds_total{cpu="1",mode="user"} 14.8`
-      `node_cpu_seconds_total{cpu="0",mode="system"} 8.5` `node_cpu_seconds_total{cpu="0",mode="user"} 16.11`
+      * CPU `node_cpu_seconds_total{cpu="1",mode="system"} 7.31` `node_cpu_seconds_total{cpu="1",mode="user"} 14.8` `node_cpu_seconds_total{cpu="1",mode="idle"} 287.38`
+      `node_cpu_seconds_total{cpu="0",mode="system"} 8.5` `node_cpu_seconds_total{cpu="0",mode="user"} 16.11` `node_cpu_seconds_total{cpu="0",mode="idle"} 277.67`
       
+      * MEMORY `node_memory_MemAvailable_bytes 2.712117248e+09` `node_memory_MemFree_bytes 1.546317824e+09` `node_memory_MemTotal_bytes 4.1227264e+09`
+
+
     
