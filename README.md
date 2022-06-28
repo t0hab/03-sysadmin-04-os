@@ -32,14 +32,14 @@
       Запускаем `sudo systemctl start node_exporter`
      
      Проверяем статус нашего сервиса `sudo systemctl status node_exporter`
-     ![alt text](https://i.imgur.com/dOJLBFw.png)
+     ![alt text](https://i.ibb.co/LNmTr8D/image.png)
      
      Подключаем для нашего сервиса автозапуск `sudo systemctl enable node_exporter`
      
      Дополнение: Необходимо проверить заранее не занят ли порт 9100, так как его использует node_exporter
      
      Скриншот работы Node Exporter с браузерной странички на нашем адрессе 
-     ![alt text](https://i.imgur.com/uBGlaEp.png)
+     ![alt text](https://i.ibb.co/4sD4trk/image.png)
     
 2. Ознакомьтесь с опциями node_exporter и выводом /metrics по-умолчанию. Приведите несколько опций, которые вы бы выбрали для базового мониторинга хоста по CPU, памяти, диску и сети.
       
@@ -66,6 +66,13 @@
      ## Ответ
      
      ![node_exporter](https://i.ibb.co/59Hgk17/image.png)
+
+4. Можно ли по выводу dmesg понять, осознает ли ОС, что загружена не на настоящем оборудовании, а на системе виртуализации?
+
+     ## Ответ
+      
+     Да. Можно загрепать для удобного визуала
+     ![node_exporter](https://i.ibb.co/PmHdQJb/image.png)
 
 
     
