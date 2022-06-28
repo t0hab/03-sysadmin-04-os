@@ -74,5 +74,66 @@
      Да. Можно загрепать для удобного визуала
      ![node_exporter](https://i.ibb.co/PmHdQJb/image.png)
 
+5. Как настроен sysctl fs.nr_open на системе по-умолчанию? Узнайте, что означает этот параметр. Какой другой существующий лимит не позволит достичь такого числа (ulimit --help)?
+
+     ## Ответ
+     
+     Данный параметр означает максимальное кол-во открытых дискрипторов
+
+     ```
+     vagrant@vagrant:~$ sudo sysctl -a | grep fs.nr_open
+     fs.nr_open = 1048576
+     ```
+     Другой существующий лимит через ulimit
+     
+     ```
+      vagrant@vagrant:~$ ulimit -a
+      core file size          (blocks, -c) 0
+      data seg size           (kbytes, -d) unlimited
+      scheduling priority             (-e) 0
+      file size               (blocks, -f) unlimited
+      pending signals                 (-i) 3707
+      max locked memory       (kbytes, -l) 65536
+      max memory size         (kbytes, -m) unlimited
+      open files                      (-n) 1024
+      pipe size            (512 bytes, -p) 8
+      POSIX message queues     (bytes, -q) 819200
+      real-time priority              (-r) 0
+      stack size              (kbytes, -s) 8192
+      cpu time               (seconds, -t) unlimited
+      max user processes              (-u) 3707
+      virtual memory          (kbytes, -v) unlimited
+      file locks                      (-x) unlimited
+      vagrant@vagrant:~$ ulimit -Sn
+      1024
+      vagrant@vagrant:~$ ulimit -Hn
+      1048576
+      ```
+6. Запустите любой долгоживущий процесс (не ls, который отработает мгновенно, а, например, sleep 1h) в отдельном неймспейсе процессов; покажите, что ваш процесс работает под PID 1 через nsenter. Для простоты работайте в данном задании под root (sudo -i). Под обычным пользователем требуются дополнительные опции (--map-root-user) и т.д.
+     
+     ## Ответ
+     
+     запустил sleep 1h 
+     
+     ![picture](https://i.ibb.co/wMPYCRz/image.png)
+     
+   ```
+   root@vagrant:~# ps -e | grep sleep
+   1908 pts/3    00:00:00 sleep
+   root@vagrant:~# nsenter --target 1908 --pid --mount
+   root@vagrant:/# ps
+   PID TTY          TIME CMD
+   1950 pts/1    00:00:00 sudo
+   1951 pts/1    00:00:00 bash
+   1983 pts/1    00:00:00 nsenter
+   1984 pts/1    00:00:00 bash
+   1995 pts/1    00:00:00 ps
+   root@vagrant:/# 
+   ```
+
+   
+
+     
+
 
     
