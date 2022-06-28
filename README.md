@@ -51,6 +51,7 @@
       
       * MEMORY `node_memory_MemAvailable_bytes 2.712117248e+09` `node_memory_MemFree_bytes 1.546317824e+09` `node_memory_MemTotal_bytes 4.1227264e+09`
       * DISK `node_disk_io_time_seconds_total{device="sda"} 152.728` `node_disk_read_bytes_total{device="sda"} 1.280625664e+09` `node_disk_read_time_seconds_total{device="sda"} 480.72` `node_disk_write_time_seconds_total{device="sda"} 446.18600000000004` 
+      * NETWORK `node_network_receive_errs_total{device="enp0s3"} 0``node_network_receive_bytes_total{device="enp0s3"} 1.486831e+06` `node_network_transmit_bytes_total{device="enp0s3"} 130269` `node_network_transmit_errs_total{device="enp0s3"} 0`
 
 
     
