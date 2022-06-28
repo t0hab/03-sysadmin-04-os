@@ -53,5 +53,19 @@
       * DISK `node_disk_io_time_seconds_total{device="sda"} 152.728` `node_disk_read_bytes_total{device="sda"} 1.280625664e+09` `node_disk_read_time_seconds_total{device="sda"} 480.72` `node_disk_write_time_seconds_total{device="sda"} 446.18600000000004` 
       * NETWORK `node_network_receive_errs_total{device="enp0s3"} 0``node_network_receive_bytes_total{device="enp0s3"} 1.486831e+06` `node_network_transmit_bytes_total{device="enp0s3"} 130269` `node_network_transmit_errs_total{device="enp0s3"} 0`
 
+3. Установите в свою виртуальную машину Netdata. Воспользуйтесь готовыми пакетами для установки (sudo apt install -y netdata). После успешной установки:
+   * в конфигурационном файле `/etc/netdata/netdata.conf` в секции [web] замените значение с localhost на `bind to = 0.0.0.0`,
+    * добавьте в Vagrantfile проброс порта Netdata на свой локальный компьютер и сделайте `vagrant reload`:
+
+    ```bash
+    config.vm.network "forwarded_port", guest: 19999, host: 19999
+    ```
+
+    После успешной перезагрузки в браузере *на своем ПК* (не в виртуальной машине) вы должны суметь зайти на `localhost:19999`. Ознакомьтесь с метриками, которые по умолчанию собираются Netdata и с комментариями, которые даны к этим метрикам.
+    
+     ## Ответ
+     
+     ![node_exporter](https://i.ibb.co/59Hgk17/image.png)
+
 
     
