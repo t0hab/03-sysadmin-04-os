@@ -4,6 +4,8 @@
 
 1. Предлагаю уточнить как именно в службу будут передаваться дополнительные опции. Замечу, что речь идёт не о переменных окружения, а об опциях (параметрах) запуска службы.
 
+### Ответ:
+
 Спасибо за мануал. Воспользовался информацией из freedesktop 
 
 
@@ -18,6 +20,29 @@ EnvironmentFile=/etc/default/node_exporter
 [Install]
 WantedBy=default.target
 ```
+
+2. Задание 6
+Вы запустили sleep без параметра и он закончился быстрее, чем был вызван nsenter. Попробуйте выполнить так, чтобы PID = 1
+### Ответ:
+Действительно, ранее sleep у меня не стовился в 1 час. Всё исправил, ниже вывод
+
+```bash
+root        1316  0.0  0.0   5476   596 pts/1    S+   21:49   0:00 sleep 1h
+root        1317  0.0  0.3   8892  3440 pts/0    R+   21:50   0:00 ps aux
+root@vagrant:~# nsenter -t 1316 -p -m
+root@vagrant:/# ps
+    PID TTY          TIME CMD
+      2 pts/0    00:00:00 bash
+     13 pts/0    00:00:00 ps
+root@vagrant:/# ps aux
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root           1  0.0  0.0   5476   596 pts/1    S+   21:49   0:00 sleep 1h
+root           2  0.0  0.4   7236  4112 pts/0    S    21:50   0:00 -bash
+root          14  0.0  0.3   8892  3356 pts/0    R+   21:52   0:00 ps aux
+root@vagrant:/# 
+```
+
+
 
 ---
 ## Домашняя работа
