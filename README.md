@@ -15,7 +15,7 @@ Description=Node Exporter
 
 [Service]
 ExecStart=/opt/node_exporter/node_exporter
-EnvironmentFile=/etc/default/node_exporter
+EnvironmentFile=/etc/default/node_exporter $MY_OPTION
  
 [Install]
 WantedBy=default.target
